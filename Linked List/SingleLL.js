@@ -13,7 +13,7 @@ class LinkedList {
         this.length = 1; 
     } 
 
-    append(value) {
+    append(value) { // push
         let node = new Node(value); 
         this.tail.next = node; 
         this.tail = node; 
@@ -61,6 +61,7 @@ class LinkedList {
         return data; 
     } 
 
+    
     print() {
         let data = this.head; 
         while(data) {
