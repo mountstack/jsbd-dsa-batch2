@@ -53,7 +53,7 @@ hash.set(300)
 hash.set(400)
 hash.set(500)
 
-console.log(hash.get(105));
+console.log(hash.get(105)); 
 
-console.log(hash.table);
+console.log(hash.table); 
 
