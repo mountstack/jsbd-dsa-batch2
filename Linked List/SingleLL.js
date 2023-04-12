@@ -70,6 +70,15 @@ class LinkedList {
         }
     } 
 
+    printRecursion(data) {
+        if(!data) {
+            return;
+        } 
+
+        console.log(data.value);
+        this.printRecursion(data.next);
+    }
+
     update(value, n) {
         let node = this.findNode(n); 
         node.value = value; 
@@ -93,12 +102,14 @@ list2.appendAtPosition(100, 2);
 list2.appendAtPosition(100, 5); 
 list2.appendAtPosition(-25, 1); 
 
-list2.update(25, 1); 
-list2.update(2000, 4); 
-list2.delete(4)
+// list2.update(25, 1); 
+// list2.update(2000, 4); 
+// list2.delete(4)
 
-list2.print(); 
+// list2.print(); 
 
 
 
 list2;
+
+list2.printRecursion(list2.head); 

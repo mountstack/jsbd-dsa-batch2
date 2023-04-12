@@ -45,5 +45,3 @@ function checkIfPangram(str) {
 console.log(checkIfPangram("abcd"));
 console.log(checkIfPangram("leetcode"));
 console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
-
-
