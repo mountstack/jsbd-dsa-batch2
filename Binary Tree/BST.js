@@ -5,7 +5,7 @@ class Node {
         this.left = left; 
         this.right = right; 
     }
-}
+} 
 
 
 class BST {
@@ -55,6 +55,52 @@ class BST {
             }
         }
     }
+
+    BFS(root) { 
+        let queue = [root]; 
+
+        while(queue.length) {
+            let node = queue?.shift(); 
+
+            console.log(node?.value); 
+
+            if(node?.left) {
+                queue.push(node?.left)
+            }
+            if(node?.right) {
+                queue.push(node?.right)
+            }
+        }  
+    } 
+
+    isValidBST(node = null, min=-Infinity, max=Infinity) { 
+        if(!node) return true; 
+        if(node.value < min || node.value > max) return false; 
+        
+        return this.isValidBST(node.left, min, node.value) && this.isValidBST(node.right, node.value, max); 
+    } 
+
+
+    predessor(root) {
+        let node = root.left; 
+        while(true) {
+            if(!node.right) { 
+                return node.value; 
+            } 
+            node = node.right; 
+        } 
+    } 
+
+    successor(root) {
+        let node = root.right; 
+        while(true) {
+            if(!node.left) { 
+                return node.value; 
+            } 
+            node = node.left; 
+        } 
+    }
+
 }
 
 let bst = new BST(10);
@@ -73,5 +119,9 @@ bst.insert(28)
 
 
 bst 
+bst.BFS(bst.root); 
 
 console.log(bst.search(100));
+
+console.log(bst.predessor(bst.root));
+console.log(bst.successor(bst.root));
